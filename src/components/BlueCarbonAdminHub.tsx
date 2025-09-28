@@ -293,9 +293,6 @@ const BlueCarbonAdminHub: React.FC = () => {
             >
               Sign In to Dashboard
             </Button>
-            <div className="text-center text-sm text-gray-500 bg-emerald-50 p-3 rounded-lg">
-              Demo: Use any credentials to login
-            </div>
           </CardContent>
         </Card>
       </div>
