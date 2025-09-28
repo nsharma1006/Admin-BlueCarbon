@@ -7,7 +7,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from './ui/dialog';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Textarea } from './ui/textarea';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell } from 'recharts';
+import { XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell } from 'recharts';
 import { CheckCircle, XCircle, Clock, Users, TrendingUp, Leaf, DollarSign, Eye, ThumbsUp, ThumbsDown, AlertCircle, Home, FileText, Settings, LogOut, User, Shield, Info, ShoppingCart, Star } from 'lucide-react';
 
 interface Project {
@@ -93,7 +93,7 @@ const BlueCarbonAdminHub: React.FC = () => {
   const [showApprovalModal, setShowApprovalModal] = useState<boolean>(false);
   const [showCreditModal, setShowCreditModal] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
+  const [error, _setError] = useState<string | null>(null);
   const [credentials, setCredentials] = useState<Credentials>({ username: '', password: '' });
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   const [approvalDecision, setApprovalDecision] = useState<string>('');
@@ -1250,7 +1250,7 @@ const BlueCarbonAdminHub: React.FC = () => {
                       { name: 'AI Assessment', status: selectedProject.aiApproval, icon: CheckCircle, description: 'AI-powered analysis' },
                       { name: 'Admin Approval', status: selectedProject.adminApproval, icon: User, description: 'Final admin decision' }
                     ].map((approval, index) => {
-                      const Icon = approval.icon;
+                      
                       return (
                         <div key={index} className="text-center p-6 border rounded-xl bg-white/50">
                           <div className="flex justify-center mb-4">
@@ -1292,5 +1292,7 @@ const BlueCarbonAdminHub: React.FC = () => {
     </div>
   );
 };
+
+
 
 export default BlueCarbonAdminHub;
